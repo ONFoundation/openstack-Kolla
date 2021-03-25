@@ -1,0 +1,4 @@
+---
+- hosts: net
+  roles:
+    - kolla init
