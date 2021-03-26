@@ -1,3 +1,4 @@
+#https://www.tecmint.com/create-network-bridge-in-rhel-centos-8/
 
 nmcli conn add type bridge con-name br0 ifname br0
 
@@ -7,3 +8,6 @@ nmcli conn modify br0 ipv4.dns {{bridge_dns}}
 nmcli conn modify br0 ipv4.method manual
 
 nmcli conn add type ethernet slave-type bridge con-name bridge-br0 ifname {{bridge_port}} master br0
+
+nmcli conn up br0
+nmcli conn down {{bridge_port}}
