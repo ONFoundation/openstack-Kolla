@@ -1,6 +1,12 @@
 ---
+- name: Check python
+  command: 'which python3'
+  register: python_exist
+
 - name: update repos
   raw: dnf update -y
+  when: not python_exist
 
 - name: update repos
   raw: dnf install python3 -y
+  when: not python_exist
