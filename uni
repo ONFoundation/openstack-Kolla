@@ -1,10 +1,5 @@
 ---
 - hosts: net
-  gather_facts: no
-  roles:
-    - pre/bootstrap python
-
-- hosts: net
   roles:
     - this
     - network/bridge

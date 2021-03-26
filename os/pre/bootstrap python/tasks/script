@@ -1,0 +1,5 @@
+---
+# Use script instead of Raw commands, so it can work on any distro!
+
+"This module does not require python on the remote system, much like the ansible.builtin.script module."
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/script_module.html
