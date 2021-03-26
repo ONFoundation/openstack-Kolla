@@ -2,7 +2,7 @@
 - hosts: net
   gather_facts: no
   roles:
-    - pre/python
+    - pre/bootstrap python
 
 # - hosts: net
 #   roles:
