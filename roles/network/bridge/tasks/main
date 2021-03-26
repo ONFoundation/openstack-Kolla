@@ -1,0 +1,7 @@
+---
+
+- name: Bridge network
+  template:
+    src: bridge nmcli.j2
+    dest: /root/bridge nmcli
+    mode: a+x

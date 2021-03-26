@@ -1,0 +1,8 @@
+---
+bridge_ip: '192.168.1.120/24'
+bridge_gateway: '192.168.1.1'
+bridge_dns: '192.168.1.1'
+
+bridge_port: 'enp1s0'
+
+broadcast: '192.168.1.255'

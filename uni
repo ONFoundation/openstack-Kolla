@@ -7,5 +7,5 @@
 - hosts: net
   roles:
     - this
-    - bridge
+    - network/bridge
     - kolla/init
