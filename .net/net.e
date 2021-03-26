@@ -1,11 +1,10 @@
-[lan]
-192.168.1.113
+[centos]
+192.168.1.120
 
-[lan:vars]
+[centos:vars]
 ansible_become_password=u
-ansible_user=me
+ansible_user=root
 
 
 [net:children]
-local
-#lan
+centos

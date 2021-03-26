@@ -1,4 +1,9 @@
 ---
 - hosts: net
+  gather_facts: no
   roles:
-    - kolla init
+    - pre/python
+
+# - hosts: net
+#   roles:
+#     - kolla/init

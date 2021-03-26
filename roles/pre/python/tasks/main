@@ -1,0 +1,6 @@
+---
+- name: update repos
+  raw: dnf update -y
+
+- name: update repos
+  raw: dnf install python3 -y
