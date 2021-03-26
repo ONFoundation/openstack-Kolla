@@ -4,6 +4,8 @@
   roles:
     - pre/bootstrap python
 
-# - hosts: net
-#   roles:
-#     - kolla/init
+- hosts: net
+  roles:
+    - this
+    - bridge
+    - kolla/init
