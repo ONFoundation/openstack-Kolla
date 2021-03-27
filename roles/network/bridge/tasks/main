@@ -1,7 +1,13 @@
 ---
 
-- name: Bridge network
+- name: Bridge network template
   template:
     src: bridge nmcli.j2
-    dest: /root/bridge nmcli
+    dest: /tmp/bridge-nmcli
     mode: a+x
+  delegate_to: localhost
+
+- name: Bridge network
+  script: /tmp/bridge-nmcli
+  args:
+    creates: /etc/sysconfig/network-scripts/ifcfg-bridge-br0
