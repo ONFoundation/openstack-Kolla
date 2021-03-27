@@ -1,4 +1,37 @@
 ---
 
-- debug:
-    msg: 'hello centos'
+- name: Install pkgs
+  dnf:
+    name:
+      - epel-release
+      - python-pip
+      - python-devel
+      - libffi-devel
+      - gcc
+      - openssl-devel
+      - libselinux-python
+      - ansible
+      - git
+    state: latest
+
+- name: Update pip to avoid issues later
+  pip:
+    name: pip
+    extra_args: --upgrade
+
+- name: Install kolla-ansible
+  pip:
+    name: kolla-ansible
+    extra_args: --ignore-installed
+
+- name: Git checkout kolla
+  git:
+    repo: 'https://github.com/openstack/kolla'
+    dest: /root/
+    # version: release-0.22
+
+- name: Git checkout kolla-ansible
+  git:
+    repo: 'https://github.com/openstack/kolla-ansible'
+    dest: /root/
+    # version: release-0.22

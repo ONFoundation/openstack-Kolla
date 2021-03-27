@@ -10,4 +10,8 @@ nmcli conn modify br0 ipv4.method manual
 nmcli conn add type ethernet slave-type bridge con-name bridge-br0 ifname {{bridge_port}} master br0
 
 nmcli conn up br0
+
+if_port_up(){
 #nmcli conn down {{bridge_port}}
+echo
+}
