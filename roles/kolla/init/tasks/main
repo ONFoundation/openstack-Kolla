@@ -4,15 +4,16 @@
   dnf:
     name:
       - epel-release
-      - python-pip
-      - python-devel
+      - python3-pip
+      - python3-devel
       - libffi-devel
       - gcc
       - openssl-devel
-      - libselinux-python
+      - libselinux-python3
       - ansible
       - git
     state: latest
+    # https://pkgs.org/search/?q=ansible
 
 - name: Update pip to avoid issues later
   pip:
@@ -27,11 +28,21 @@
 - name: Git checkout kolla
   git:
     repo: 'https://github.com/openstack/kolla'
-    dest: /root/
-    # version: release-0.22
+    dest: '/home/{{ansible_user}}/kolla'
 
 - name: Git checkout kolla-ansible
   git:
     repo: 'https://github.com/openstack/kolla-ansible'
-    dest: /root/
-    # version: release-0.22
+    dest: '/home/{{ansible_user}}/kolla-ansible'
+
+- name: Copy 1
+  copy:
+    src: /usr/share/kolla-ansible/etc_examples/kolla
+    dest: /etc/
+    remote_src: yes
+
+- name: Copy 2
+  copy:
+    src: /usr/share/kolla-ansible/ansible/inventory/*
+    dest: '/home/{{ansible_user}}'
+    remote_src: yes
