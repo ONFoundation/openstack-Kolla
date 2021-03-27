@@ -2,4 +2,4 @@
 bridge_ip: '10.0.0.2/24'
 bridge_gateway: '10.0.0.1'
 bridge_dns: '10.0.0.1'
-bridge_port: 'enp1s0'
+bridge_port: 'enp2s0'
